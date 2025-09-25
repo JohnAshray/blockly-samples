@@ -45,4 +45,31 @@
   document.querySelector('#save').addEventListener('click', handleSave);
 
   enableMakerMode();
+  const toolbox = {
+  'kind': 'flyoutToolbox',
+  'contents': [
+    {
+      'kind': 'block',
+      'type': 'controls_repeat_ext',
+      'inputs': {
+        'TIMES': {
+          'shadow': {
+            'type': 'math_number',
+            'fields': {
+              'NUM': 5
+            }
+          }
+        }
+      }
+    }
+  ]
+};
+<div id="blocklyDiv" style="height: 480px; width: 400px;"></div>
+Blockly.inject('blocklyDiv', {
+  toolbox: toolbox,
+  scrollbars: false,
+  horizontalLayout: true,
+  toolboxPosition: "end",
+});
+
 })();
